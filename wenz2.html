@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Playlist</title>
+<link rel="stylesheet" href="wenz2.css">
+</head>
+<body>
+
+<div class="phone-frame">
+    <h2 class="title">SURPRISEEE!!!
+        Earl's songs for uu, Mikaela🤍</h2>
+    <p class="subtitle">I know how much u love these songs so I created a mini playable tabs for u🤍</p>
+
+    <div class="songs-grid">
+
+        <div class="song">
+            <img src="earl 1.jpg" alt="">
+            <div class="info">
+                <h3>Dito Sa'kin</h3>
+                <p>Earl Agustin</p>
+            </div>
+            <button onclick="toggle('a1', this)">▶</button>
+            <audio id="a1" src="ditosakin.mp3"></audio>
+        </div>
+
+        <div class="song">
+            <img src="earl2.jpg" alt="">
+            <div class="info">
+                <h3>Dalangin</h3>
+                <p>Earl Agustin</p>
+            </div>
+            <button onclick="toggle('a2', this)">▶</button>
+            <audio id="a2" src="dalangin.mp3"></audio>
+        </div>
+
+        <div class="song">
+            <img src="earl5.jpg" alt="">
+            <div class="info">
+                <h3>Pag-ibig ng Ikaw at Ako</h3>
+                <p>Earl Agustin</p>
+            </div>
+            <button onclick="toggle('a3', this)">▶</button>
+            <audio id="a3" src="pagibig.mp3"></audio>
+        </div>
+
+        <div class="song">
+            <img src="earl4.jpg" alt="">
+            <div class="info">
+                <h3>Aya</h3>
+                <p>Earl Agustin</p>
+            </div>
+            <button onclick="toggle('a4', this)">▶</button>
+            <audio id="a4" src="aya.mp3"></audio>
+        </div>
+
+        <div class="song">
+            <img src="earl4.jpg" alt="">
+            <div class="info">
+                <h3>Minamahal</h3>
+                <p>Earl Agustin</p>
+            </div>
+            <button onclick="toggle('a5', this)">▶</button>
+            <audio id="a5" src="minamahal.mp3"></audio>
+        </div>
+
+    </div>
+
+    <!-- 🔥 NEXT PAGE BUTTON -->
+    <button class="next-btn" onclick="goNext()">Next mwehehe →</button>
+</div>
+
+<div id="sparkles"></div>
+
+<script>
+function toggle(id, btn) {
+    const audio = document.getElementById(id);
+
+    document.querySelectorAll("audio").forEach(a => {
+        if (a.id !== id) {
+            a.pause();
+            a.currentTime = 0;
+        }
+    });
+
+    document.querySelectorAll(".song").forEach(s => {
+        s.classList.remove("playing");
+    });
+
+    document.querySelectorAll(".song button").forEach(b => {
+        b.innerText = "▶";
+    });
+
+    if (audio.paused) {
+        audio.play();
+        btn.innerText = "⏸";
+        btn.closest(".song").classList.add("playing");
+    } else {
+        audio.pause();
+        btn.innerText = "▶";
+    }
+}
+
+/* NEXT PAGE */
+function goNext() {
+    window.location.href = "wenz3.html";
+}
+
+/* sparkles */
+function createSparkle() {
+    const sparkle = document.createElement("div");
+    sparkle.classList.add("sparkle");
+
+    sparkle.style.left = Math.random() * window.innerWidth + "px";
+    sparkle.style.top = Math.random() * window.innerHeight + "px";
+
+    document.body.appendChild(sparkle);
+
+    setTimeout(() => sparkle.remove(), 2000);
+}
+
+setInterval(createSparkle, 700);
+</script>
+<div class="disco-wrapper">
+
+    <div class="light-rays"></div>
+
+    <div class="disco-ball">
+        <div class="shine"></div>
+    </div>
+
+</div>
+</body>
+</html>

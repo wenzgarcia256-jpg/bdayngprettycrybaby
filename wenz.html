@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for you</title>
+    <link rel="stylesheet" href="kmcm.css">
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div class="container">
+    <h1>Happyy Birthdayy,</h1>
+    <h1>My Dearest, Mikaela</h1>
+
+    <p class="subtitle">
+        I know how much you love earl's songs so I made the theme like his songs🤍
+    </p>
+
+    <button onclick="goNext()">open mo^^</button>
+</div>
+
+<canvas id="stars"></canvas>
+
+<script>
+    function createGlow() {
+        const glow = document.createElement("div");
+        glow.classList.add("glow");
+
+        glow.style.left = Math.random() * window.innerWidth + "px";
+        glow.style.animationDuration = (Math.random() * 5 + 5) + "s";
+
+        document.body.appendChild(glow);
+
+        setTimeout(() => {
+            glow.remove();
+        }, 8000);
+    }
+
+    setInterval(createGlow, 400);
+
+    function createSparkle() {
+        const sparkle = document.createElement("div");
+        sparkle.classList.add("sparkle");
+
+        sparkle.style.left = Math.random() * window.innerWidth + "px";
+        sparkle.style.top = Math.random() * window.innerHeight + "px";
+
+        document.body.appendChild(sparkle);
+
+        setTimeout(() => {
+            sparkle.remove();
+        }, 2000);
+    }
+
+    setInterval(createSparkle, 800);
+
+    function goNext() {
+        window.location.href = "wenz2.html";
+    }
+</script>
+<div class="disco-wrapper">
+
+    <div class="light-rays"></div>
+
+    <div class="disco-ball">
+        <div class="shine"></div>
+    </div>
+
+</div>
+</body>
+</html>
