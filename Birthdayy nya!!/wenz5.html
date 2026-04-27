@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Mikaela</title>
+
+<link rel="stylesheet" href="wenz5.css">
+</head>
+
+<body>
+
+<div class="fx-layer"></div>
+
+<div class="phone-frame fade-in">
+
+    <h1 class="big-title">Happy Birthdayyyy, Iyakin / Binibini / Crybaby / Mina / Stephanie / Ivy / and best of all, Mikaela🤍 I hope you love this little surprise of mine :33</h1>
+
+    <div class="card photo-card">
+
+        <div class="photo-container">
+
+            <!-- YOUR PIC -->
+            <div class="photo-box left">
+                <img src="wenz.jpg" alt="Your childhood pic">
+                <p>me</p>
+            </div>
+
+            
+
+            <!-- HER PIC -->
+            <div class="photo-box right">
+                <img src="mikay.jpg" alt="Her childhood pic">
+                <p>you</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ✨ SPARKLES -->
+<div id="sparkles"></div>
+
+<script>
+
+/* ✨ SPARKLES */
+function createSparkle() {
+    const sparkle = document.createElement("div");
+    sparkle.classList.add("sparkle");
+
+    sparkle.style.left = Math.random() * window.innerWidth + "px";
+    sparkle.style.top = Math.random() * window.innerHeight + "px";
+
+    document.querySelector(".fx-layer").appendChild(sparkle);
+
+    setTimeout(() => sparkle.remove(), 2000);
+}
+setInterval(createSparkle, 700);
+
+/* ✨ BUBBLES */
+function createGlow() {
+    const glow = document.createElement("div");
+    glow.classList.add("glow");
+
+    glow.style.left = Math.random() * window.innerWidth + "px";
+    glow.style.top = window.innerHeight + "px";
+
+    document.querySelector(".fx-layer").appendChild(glow);
+
+    setTimeout(() => glow.remove(), 8000);
+}
+setInterval(createGlow, 400);
+
+/* 🌅 PAGE LOAD ANIMATION */
+window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
+});
+
+</script>
+<div class="disco-wrapper">
+
+    <div class="light-rays"></div>
+
+    <div class="disco-ball">
+        <div class="shine"></div>
+    </div>
+
+</div>
+</body>
+</html>
